@@ -113,7 +113,7 @@ class ComposerStaticInit0616338a2caba8af034efd8cfc46d2d7
         ),
         'F' => 
         array (
-            'Fbaconsulting\\Aclpackage\\' => 25,
+            'Fbaconsulting\\Aclpackage2\\' => 26,
         ),
         'E' => 
         array (
@@ -328,7 +328,7 @@ class ComposerStaticInit0616338a2caba8af034efd8cfc46d2d7
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Fbaconsulting\\Aclpackage\\' => 
+        'Fbaconsulting\\Aclpackage2\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

@@ -15,7 +15,7 @@ Primero, necesitarás decirle a Composer dónde encontrar tu paquete. Agrega el 
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Txixho/aclpackage"
+            "url": "https://github.com/Txixho/aclpackage2"
         }
     ]
 }
@@ -24,30 +24,12 @@ Primero, necesitarás decirle a Composer dónde encontrar tu paquete. Agrega el 
 Ahora puedes instalar el paquete utilizando Composer. Ejecuta el siguiente comando en tu terminal:
 
 ```bash
-composer require fbaconsulting/aclpackage
+composer require fbaconsulting/aclpackage2
 ```
 Este comando descargará e instalará el paquete en tu proyecto.
 
-### Paso 3: Registrar Middlewares
-Después de instalar el paquete, debes registrar manualmente los middleware proporcionados por el paquete. Añade las siguientes líneas al archivo `app/Http/Kernel.php` en la sección `routeMiddleware` de tu proyecto Laravel:
 
-```
-protected $routeMiddleware = [
-// ... (otros middlewares)
-'ruta' => \Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarAccesoRuta::class,
-'rutaUsuario' => \Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarRutaUsuario::class,
-];
-```
-### Paso 4: Registrar el ServiceProvider
-Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en tu archivo `config/app.php`. Agrega la siguiente línea en el array providers:
-
-```
-'providers' => [
-    // ...
-    Fbaconsulting\Aclpackage2\AclPackageServiceProvider::class,
-],
-```
-### Paso 5: Registrar el modelo Usuario
+### Paso 3: Registrar el modelo Usuario
 Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
 
 ```
@@ -58,7 +40,7 @@ Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la s
         ],
 ```
 
-### Paso 6: Asignar Middleware a las Rutas
+### Paso 4: Asignar Middleware a las Rutas
 Por último, necesitas asignar el middleware a las rutas que quieras proteger en tu aplicación Laravel. Agrega el middleware a tus rutas en los archivos de rutas como `routes/web.php`:
 
 ```

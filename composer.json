@@ -3,6 +3,13 @@
     "description": "Paquete acl para Users",
     "type": "library",
     "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fbaconsulting\\Aclpackage2\\AclPackageServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Fbaconsulting\\Aclpackage2\\": "src/"
