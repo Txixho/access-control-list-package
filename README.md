@@ -15,7 +15,7 @@ Primero, necesitarás decirle a Composer dónde encontrar tu paquete. Agrega el 
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Txixho/aclpackage2"
+            "url": "https://github.com/Txixho/acl-package2"
         }
     ]
 }
