@@ -30,7 +30,7 @@ Este comando descargará e instalará el paquete en tu proyecto.
 
 
 ### Paso 3: Registrar el modelo Usuario
-Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
+Deberás registar el modelo Usuario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
 
 ```
 'providers' => [
