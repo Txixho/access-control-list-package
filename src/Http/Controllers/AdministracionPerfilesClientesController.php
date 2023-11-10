@@ -9,7 +9,7 @@ use Fbaconsulting\Aclpackage2\Services\PerfilService;
 use Illuminate\Http\Request;
 
 
-class AdministracionClientesController extends Controller
+class AdministracionPerfilesClientesController extends Controller
 {
     protected $perfilService;
 

@@ -7,7 +7,7 @@ use Fbaconsulting\Aclpackage2\Services\PerfilService;
 use Fbaconsulting\Aclpackage2\Services\UsuarioService;
 use Illuminate\Http\Request;
 
-class AdministracionUsuariosController extends Controller
+class AdministracionPerfilesUsuariosController extends Controller
 {
     protected $perfilService;
     protected $usuarioService;
