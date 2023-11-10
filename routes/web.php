@@ -1,14 +1,14 @@
 <?php
 
-use Fbaconsulting\Aclpackage\Http\Controllers\AdministracionClientesController;
-use Fbaconsulting\Aclpackage\Http\Controllers\AdministracionPerfilesController;
-use Fbaconsulting\Aclpackage\Http\Controllers\AdministracionUsuariosController;
-use Fbaconsulting\Aclpackage\Http\Controllers\PerfilController;
-use Fbaconsulting\Aclpackage\Http\Controllers\PerfilRutaController;
-use Fbaconsulting\Aclpackage\Http\Controllers\TablaRutasController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\AdministracionClientesController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\AdministracionPerfilesController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\AdministracionUsuariosController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\PerfilController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\PerfilRutaController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\TablaRutasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Fbaconsulting\Aclpackage\Http\Controllers\UsuariosController;
+use Fbaconsulting\Aclpackage2\Http\Controllers\UsuariosController;
 
 
 Auth::routes();

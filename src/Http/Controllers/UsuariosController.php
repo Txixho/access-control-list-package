@@ -1,9 +1,9 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Http\Controllers;
+namespace Fbaconsulting\Aclpackage2\Http\Controllers;
 
-use Fbaconsulting\Aclpackage\Models\Usuario;
-use Fbaconsulting\Aclpackage\Services\UsuarioService;
+use Fbaconsulting\Aclpackage2\Models\Usuario;
+use Fbaconsulting\Aclpackage2\Services\UsuarioService;
 
 class UsuariosController extends Controller
 {

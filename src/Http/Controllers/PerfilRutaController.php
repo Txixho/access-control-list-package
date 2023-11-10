@@ -1,9 +1,9 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Http\Controllers;
+namespace Fbaconsulting\Aclpackage2\Http\Controllers;
 
-use Fbaconsulting\Aclpackage\Models\Perfil;
-use Fbaconsulting\Aclpackage\Services\RutaService;
+use Fbaconsulting\Aclpackage2\Models\Perfil;
+use Fbaconsulting\Aclpackage2\Services\RutaService;
 use Illuminate\Http\Request;
 
 class PerfilRutaController extends Controller

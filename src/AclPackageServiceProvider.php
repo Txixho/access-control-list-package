@@ -1,10 +1,10 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage;
+namespace Fbaconsulting\Aclpackage2;
 
 use Illuminate\Support\ServiceProvider;
-use Fbaconsulting\Aclpackage\Http\Middleware\ComprobarAccesoRuta;
-use Fbaconsulting\Aclpackage\Http\Middleware\ComprobarRutaUsuario;
+use Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarAccesoRuta;
+use Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarRutaUsuario;
 
 class AclPackageServiceProvider extends ServiceProvider
 {

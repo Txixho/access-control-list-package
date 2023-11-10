@@ -34,8 +34,8 @@ Después de instalar el paquete, debes registrar manualmente los middleware prop
 ```
 protected $routeMiddleware = [
 // ... (otros middlewares)
-'ruta' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarAccesoRuta::class,
-'rutaUsuario' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarRutaUsuario::class,
+'ruta' => \Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarAccesoRuta::class,
+'rutaUsuario' => \Fbaconsulting\Aclpackage2\Http\Middleware\ComprobarRutaUsuario::class,
 ];
 ```
 ### Paso 4: Registrar el ServiceProvider
@@ -44,7 +44,7 @@ Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en
 ```
 'providers' => [
     // ...
-    Fbaconsulting\Aclpackage\AclPackageServiceProvider::class,
+    Fbaconsulting\Aclpackage2\AclPackageServiceProvider::class,
 ],
 ```
 ### Paso 5: Registrar el modelo Usuario
@@ -54,7 +54,7 @@ Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la s
 'providers' => [
         'users' => [
             //...
-            'model' => Fbaconsulting\Aclpackage\Models\Usuario::class,
+            'model' => Fbaconsulting\Aclpackage2\Models\Usuario::class,
         ],
 ```
 

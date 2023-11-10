@@ -1,9 +1,9 @@
 <?php
-namespace Fbaconsulting\Aclpackage\Services;
+namespace Fbaconsulting\Aclpackage2\Services;
 
-use Fbaconsulting\Aclpackage\Models\Perfil;
-use Fbaconsulting\Aclpackage\Models\PerfilRutas;
-use Fbaconsulting\Aclpackage\Models\Ruta;
+use Fbaconsulting\Aclpackage2\Models\Perfil;
+use Fbaconsulting\Aclpackage2\Models\PerfilRutas;
+use Fbaconsulting\Aclpackage2\Models\Ruta;
 use Illuminate\Routing\Router;
 
 class RutaService

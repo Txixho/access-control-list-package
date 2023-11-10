@@ -1,10 +1,10 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Http\Controllers;
+namespace Fbaconsulting\Aclpackage2\Http\Controllers;
 
-use Fbaconsulting\Aclpackage\Models\PerfilCliente;
+use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
 use Illuminate\Http\Request;
-use Fbaconsulting\Aclpackage\Services\PerfilService;
+use Fbaconsulting\Aclpackage2\Services\PerfilService;
 
 class AdministracionPerfilesController
 {

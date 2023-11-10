@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Models;
+namespace Fbaconsulting\Aclpackage2\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -1,11 +1,11 @@
 {
-    "name": "fbaconsulting/aclpackage",
+    "name": "fbaconsulting/aclpackage2",
     "description": "Paquete acl para Users",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Fbaconsulting\\Aclpackage\\": "src/"
+            "Fbaconsulting\\Aclpackage2\\": "src/"
         }
     },
     "authors": [

@@ -1,9 +1,9 @@
 <?php
-namespace Fbaconsulting\Aclpackage\Services;
+namespace Fbaconsulting\Aclpackage2\Services;
 
-use Fbaconsulting\Aclpackage\Models\PerfilClientesUsuario;
-use Fbaconsulting\Aclpackage\Models\Usuario;
-use Fbaconsulting\Aclpackage\Models\PerfilCliente;
+use Fbaconsulting\Aclpackage2\Models\PerfilClientesUsuario;
+use Fbaconsulting\Aclpackage2\Models\Usuario;
+use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
 use Illuminate\Support\Facades\Auth;
 
 class UsuarioService

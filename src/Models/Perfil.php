@@ -1,8 +1,8 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Models;
+namespace Fbaconsulting\Aclpackage2\Models;
 
-use Fbaconsulting\Aclpackage\Models\Cliente;
+use Fbaconsulting\Aclpackage2\Models\Cliente;
 use Illuminate\Database\Eloquent\Model;
 
 class Perfil extends Model

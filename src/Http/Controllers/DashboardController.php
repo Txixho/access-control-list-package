@@ -1,8 +1,8 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Http\Controllers;
+namespace Fbaconsulting\Aclpackage2\Http\Controllers;
 
-use Fbaconsulting\Aclpackage\Services\UsuarioService;
+use Fbaconsulting\Aclpackage2\Services\UsuarioService;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller

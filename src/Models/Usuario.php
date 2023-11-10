@@ -1,9 +1,9 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Models;
+namespace Fbaconsulting\Aclpackage2\Models;
 
-use Fbaconsulting\Aclpackage\Models\Cliente;
-use Fbaconsulting\Aclpackage\Models\PerfilClientesUsuario;
+use Fbaconsulting\Aclpackage2\Models\Cliente;
+use Fbaconsulting\Aclpackage2\Models\PerfilClientesUsuario;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as BaseUser;

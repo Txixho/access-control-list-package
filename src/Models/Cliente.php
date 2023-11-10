@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage\Models;
+namespace Fbaconsulting\Aclpackage2\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
