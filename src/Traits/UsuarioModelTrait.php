@@ -6,7 +6,7 @@ use FbaConsulting\AccessControlListPackage\Models\PerfilClientesUsuario;
 use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
 
 
-trait UsuarioTrait
+trait UsuarioModelTrait
 {
     public function perfilesClientesUsuario()
     {
