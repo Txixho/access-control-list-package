@@ -4,7 +4,7 @@ namespace Fbaconsulting\Aclpackage2\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Fbaconsulting\Aclpackage2\Models\Usuario;
+use App\Model\Usuario;
 use Fbaconsulting\Aclpackage2\Models\PerfilRutas;
 
 class ComprobarRutaUsuario

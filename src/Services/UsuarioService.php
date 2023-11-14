@@ -2,7 +2,7 @@
 namespace Fbaconsulting\Aclpackage2\Services;
 
 use Fbaconsulting\Aclpackage2\Models\PerfilClientesUsuario;
-use Fbaconsulting\Aclpackage2\Models\Usuario;
+use App\Model\Usuario;
 use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
 use Illuminate\Support\Facades\Auth;
 

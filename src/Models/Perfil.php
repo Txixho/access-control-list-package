@@ -2,7 +2,7 @@
 
 namespace Fbaconsulting\Aclpackage2\Models;
 
-use Fbaconsulting\Aclpackage2\Models\Cliente;
+use App\Model\Cliente;
 use Illuminate\Database\Eloquent\Model;
 
 class Perfil extends Model

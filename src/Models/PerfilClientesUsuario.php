@@ -3,6 +3,7 @@
 namespace Fbaconsulting\Aclpackage2\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Usuario;
 
 class PerfilClientesUsuario extends Model
 {

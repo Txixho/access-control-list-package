@@ -2,7 +2,7 @@
 
 namespace Fbaconsulting\Aclpackage2\Http\Controllers;
 
-use Fbaconsulting\Aclpackage2\Models\Cliente;
+use App\Model\Cliente;
 use Fbaconsulting\Aclpackage2\Models\Perfil;
 use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
 use Fbaconsulting\Aclpackage2\Services\PerfilService;
