@@ -29,8 +29,6 @@ class ComprobarAccesoRuta
             return redirect('login');
         }
 
-        dd($user);
-        
         // Obtener el perfil asociado al usuario donde habilitado sea igual a 1
         $perfilClienteUsuario = $user->perfilesClientesUsuario->first(function ($perfil) {
             return $perfil->habilitado === 1;
