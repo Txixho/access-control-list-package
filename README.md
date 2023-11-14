@@ -29,15 +29,26 @@ composer require fbaconsulting/aclpackage2
 Este comando descargará e instalará el paquete en tu proyecto.
 
 
-### Paso 3: Registrar el modelo Usuario
-Deberás registar el modelo Usuario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
+### Paso 3: Integrar Traits en los Modelos Usuario y Cliente
+En el modelo Usuario agrega lo siguiente:
 
 ```
-'providers' => [
-        'users' => [
-            //...
-            'model' => Fbaconsulting\Aclpackage2\Models\Usuario::class,
-        ],
+use Fbaconsulting\Aclpackage2\Traits\UsuarioTrait;
+
+class Usuario extends Authenticatable {
+    use UsuarioTrait;
+    // Resto del modelo...
+}
+```
+En el modelo Cliente agrega lo siguiente:
+
+```
+use Fbaconsulting\Aclpackage2\Traits\ClienteTrait;
+
+class Cliente extends Authenticatable {
+    use ClienteTrait;
+    // Resto del modelo...
+}
 ```
 
 ### Paso 4: Asignar Middleware a las Rutas
