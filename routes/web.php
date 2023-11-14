@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::middleware(['ruta'])->group(function () {
-
-
     Route::get('/admin/seleccion-perfil', [PerfilController::class, 'select'])->name('seleccion-perfil');
 
     Route::get('/admin/perfil-rutas/{perfil}', [PerfilRutaController::class, 'index'])->name('perfil-rutas.index');
@@ -44,10 +41,4 @@ Route::middleware(['ruta'])->group(function () {
 
     Route::post('/admin/crear-perfil', [PerfilController::class, 'store'])->name('guardarPerfil');
 
-});
 
-Route::middleware(['isRoot'])->group(function () {
-
-
-
-});
