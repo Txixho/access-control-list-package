@@ -24,12 +24,10 @@ class AclPackageServiceProvider extends ServiceProvider
 
         //Registrar vistas
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'aclpackage2');
-        $this->loadViewsFrom(__DIR__.'/../resources/views/admin', 'aclpackage2-admin');
 
         // Permitir la publicación de las vistas
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/aclpackage2'),
-            __DIR__.'/../resources/views/admin' => resource_path('views/vendor/aclpackage2-admin'),
         ], 'aclpackage2-views');
     }
 }
