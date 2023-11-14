@@ -68,6 +68,12 @@ Route::middleware(['comprobar.ruta'])->group(function () {
     Route::get('/ruta-protegida', [MyContoller::class, 'index'])->name('index');
 });
 ```
+### Paso 5 (OPCIONAL): Publicar vistas
+Si quieres puedes publicar las vistas del paquete ejecutando el siguiente comando en tu terminal:
+
+```bash
+php artisan vendor:publish --tag=aclpackage2-views
+```
 
 ### Uso
 Si usas el middleware con alias `comprobar.ruta`, limitarás el acceso a los usuarios cuyo perfil tenga acceso a esa ruta. Si utilizas el middleware con alias `comprobar.usuario.ruta` también permitirá acceso a la ruta si el usuario_id coincide con el id requerido en la ruta.
