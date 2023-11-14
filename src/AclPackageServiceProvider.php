@@ -29,5 +29,13 @@ class AclPackageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/aclpackage2'),
         ], 'aclpackage2-views');
+
+        //Registrar rutas
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        //Permitir la publicación de las rutas
+        $this->publishes([
+            __DIR__.'/../routes/web.php' => base_path('routes/aclpackage2.php'),
+        ], 'aclpackage2-routes');
     }
 }
