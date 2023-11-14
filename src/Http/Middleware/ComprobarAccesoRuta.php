@@ -36,7 +36,7 @@ class ComprobarAccesoRuta
 
 
         if (!$perfilClienteUsuario) {
-            abort(403);
+            abort(403, 'El usuario no tiene un perfil asociado.');
         }
 
         // Obtener el perfil_cliente_id desde el objeto PerfilClientesUsuario
