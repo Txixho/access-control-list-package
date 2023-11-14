@@ -8,22 +8,13 @@ use Fbaconsulting\Aclpackage2\Http\Controllers\PerfilRutaController;
 use Fbaconsulting\Aclpackage2\Http\Controllers\TablaRutasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Fbaconsulting\Aclpackage2\Http\Controllers\UsuariosController;
 
 
 Auth::routes();
 
 
-
-Route::middleware(['rutaUsuario'])->group(function () {
-
-    Route::get('/{id}/edit', [UsuariosController::class, 'edit'])->name('usuarios.edit');
-});
-
 Route::middleware(['ruta'])->group(function () {
 
-
-    Route::get('/admin/crear-usuario', [UsuariosController::class, 'create'])->name('usuarios.create');
 
     Route::get('/admin/seleccion-perfil', [PerfilController::class, 'select'])->name('seleccion-perfil');
 
