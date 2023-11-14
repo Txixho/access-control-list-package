@@ -74,6 +74,15 @@ Si quieres puedes publicar las vistas del paquete ejecutando el siguiente comand
 ```bash
 php artisan vendor:publish --tag=aclpackage2-views
 ```
+Encontrarás las vistas para poder ser personalizadas en el directorio `resources/views/vendor/aclpackage2`.
+
+### Paso 6 (OPCIONAL): Publicar rutas
+Si quieres puedes publicar las rutas del paquete ejecutando el siguiente comando en tu terminal:
+
+```bash
+php artisan vendor:publish --tag=aclpackage2-routes
+```
+Encontrarás las rutas para poder ser personalizadas y usadas en las vistas en `routes/aclpackage2.php`
 
 ### Uso
 Si usas el middleware con alias `comprobar.ruta`, limitarás el acceso a los usuarios cuyo perfil tenga acceso a esa ruta. Si utilizas el middleware con alias `comprobar.usuario.ruta` también permitirá acceso a la ruta si el usuario_id coincide con el id requerido en la ruta.
