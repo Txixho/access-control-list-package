@@ -1,12 +1,12 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Middleware;
+namespace FbaConsulting\AccessControlListPackage\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
-use Fbaconsulting\Aclpackage2\Models\PerfilRutas;
+use FbaConsulting\AccessControlListPackage\Models\PerfilRutas;
 
 
 class ComprobarAccesoRuta

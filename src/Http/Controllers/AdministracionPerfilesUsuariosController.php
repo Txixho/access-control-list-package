@@ -1,10 +1,10 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
 
-use Fbaconsulting\Aclpackage2\Services\PerfilService;
-use Fbaconsulting\Aclpackage2\Services\UsuarioService;
+use FbaConsulting\AccessControlListPackage\Services\PerfilService;
+use FbaConsulting\AccessControlListPackage\Services\UsuarioService;
 use Illuminate\Http\Request;
 
 class AdministracionPerfilesUsuariosController extends Controller

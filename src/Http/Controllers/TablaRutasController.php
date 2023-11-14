@@ -1,9 +1,9 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
-use Fbaconsulting\Aclpackage2\Models\Ruta;
-use Fbaconsulting\Aclpackage2\Services\RutaService;
+use FbaConsulting\AccessControlListPackage\Models\Ruta;
+use FbaConsulting\AccessControlListPackage\Services\RutaService;
 
 
 class TablaRutasController extends Controller

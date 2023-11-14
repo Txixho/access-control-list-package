@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
 use Illuminate\Http\Request;
 

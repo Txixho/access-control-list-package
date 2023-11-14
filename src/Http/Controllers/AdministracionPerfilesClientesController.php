@@ -1,11 +1,11 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
 use App\Model\Cliente;
-use Fbaconsulting\Aclpackage2\Models\Perfil;
-use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
-use Fbaconsulting\Aclpackage2\Services\PerfilService;
+use FbaConsulting\AccessControlListPackage\Models\Perfil;
+use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
+use FbaConsulting\AccessControlListPackage\Services\PerfilService;
 use Illuminate\Http\Request;
 
 

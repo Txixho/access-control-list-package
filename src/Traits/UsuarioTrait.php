@@ -1,9 +1,9 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Traits;
+namespace FbaConsulting\AccessControlListPackage\Traits;
 
-use Fbaconsulting\Aclpackage2\Models\PerfilClientesUsuario;
-use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
+use FbaConsulting\AccessControlListPackage\Models\PerfilClientesUsuario;
+use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
 
 
 trait UsuarioTrait

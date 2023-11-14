@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Models;
+namespace FbaConsulting\AccessControlListPackage\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

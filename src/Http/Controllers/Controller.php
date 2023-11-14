@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

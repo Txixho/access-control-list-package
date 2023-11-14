@@ -1,6 +1,6 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Models;
+namespace FbaConsulting\AccessControlListPackage\Models;
 
 use App\Model\Cliente;
 use Illuminate\Database\Eloquent\Model;

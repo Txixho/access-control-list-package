@@ -33,7 +33,7 @@ Este comando descargará e instalará el paquete en tu proyecto.
 En el modelo Usuario agrega lo siguiente:
 
 ```
-use Fbaconsulting\Aclpackage2\Traits\UsuarioTrait;
+use FbaConsulting\AccessControlListPackage\Traits\UsuarioTrait;
 
 class Usuario extends Authenticatable {
     use UsuarioTrait;
@@ -43,7 +43,7 @@ class Usuario extends Authenticatable {
 En el modelo Cliente agrega lo siguiente:
 
 ```
-use Fbaconsulting\Aclpackage2\Traits\ClienteTrait;
+use FbaConsulting\AccessControlListPackage\Traits\ClienteTrait;
 
 class Cliente extends Authenticatable {
     use ClienteTrait;

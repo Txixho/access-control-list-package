@@ -1,9 +1,9 @@
 <?php
-namespace Fbaconsulting\Aclpackage2\Services;
+namespace FbaConsulting\AccessControlListPackage\Services;
 
-use Fbaconsulting\Aclpackage2\Models\Perfil;
-use Fbaconsulting\Aclpackage2\Models\PerfilCliente;
-use Fbaconsulting\Aclpackage2\Models\PerfilClientesUsuario;
+use FbaConsulting\AccessControlListPackage\Models\Perfil;
+use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
+use FbaConsulting\AccessControlListPackage\Models\PerfilClientesUsuario;
 
 class PerfilService
 {

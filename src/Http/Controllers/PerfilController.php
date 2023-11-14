@@ -1,10 +1,10 @@
 <?php
 
-namespace Fbaconsulting\Aclpackage2\Http\Controllers;
+namespace FbaConsulting\AccessControlListPackage\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Fbaconsulting\Aclpackage2\Services\PerfilService;
-use Fbaconsulting\Aclpackage2\Services\RutaService;
+use FbaConsulting\AccessControlListPackage\Services\PerfilService;
+use FbaConsulting\AccessControlListPackage\Services\RutaService;
 
 class PerfilController extends Controller
 {

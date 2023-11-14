@@ -6,13 +6,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Fbaconsulting\\Aclpackage2\\AclPackageServiceProvider"
+                "FbaConsulting\\AccessControlListPackage\\AclPackageServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Fbaconsulting\\Aclpackage2\\": "src/"
+            "FbaConsulting\\AccessControlListPackage\\": "src/"
         }
     },
     "authors": [
