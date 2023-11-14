@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
-
 
     Route::get('/admin/seleccion-perfil', [PerfilController::class, 'select'])->name('seleccion-perfil');
 
