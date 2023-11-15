@@ -7,21 +7,11 @@ trait PerfilRutaModelTrait
 {
     protected $perfilModel = \App\Model\Perfil::class;
     protected $rutaModel = \App\Model\Ruta::class;
-
     protected $perfilForeignKey = 'perfil_id';
     protected $rutaForeignKey = 'ruta_id';
     protected $localKey = 'perfil_ruta_id';
 
-    // Métodos para cambiar los modelos
-    public function setPerfilModel($model)
-    {
-        $this->perfilModel = $model;
-    }
 
-    public function setRutaModel($model)
-    {
-        $this->rutaModel = $model;
-    }
 
     // Métodos para configurar las claves foráneas y la clave local
     public function setPerfilForeignKey($foreignKey)

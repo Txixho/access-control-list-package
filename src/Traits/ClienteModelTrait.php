@@ -10,11 +10,6 @@ trait ClienteModelTrait
     protected $relatedModelForeignKey = 'perfil_id';
     protected $pivotExtraColumns = ['nombre_personalizado'];
 
-    // Método para cambiar el modelo de perfil
-    public function setPerfilModel($model)
-    {
-        $this->perfilModel = $model;
-    }
 
     // Método para configurar la tabla pivot
     public function setPivotTable($tableName)

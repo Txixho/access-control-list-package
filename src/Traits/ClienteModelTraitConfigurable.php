@@ -8,7 +8,7 @@ trait ClienteModelTraitConfigurable
 
     public function getObtenerPerfiles()
     {
-        return $this->belongsToMany($this->relatedModels['perfil'] ?? \App\Model\Perfil::class,
+        return $this->belongsToMany(\App\Model\Perfil::class,
             $this->pivotTables['clientePerfil'] ?? 'perfiles_clientes',
             $this->localKeys['cliente'] ?? 'cliente_id',
             $this->foreignKeys['perfil'] ?? 'perfil_id')

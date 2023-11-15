@@ -9,16 +9,7 @@ trait UsuarioModelTrait
     protected $foreignKey = 'usuario_id';
     protected $localKey = 'usuario_id';
 
-    // Métodos para cambiar los modelos
-    public function setPerfilClientesUsuarioModel($model)
-    {
-        $this->perfilClientesUsuarioModel = $model;
-    }
 
-    public function setPerfilClienteModel($model)
-    {
-        $this->perfilClienteModel = $model;
-    }
 
     // Métodos para configurar las claves
     public function setForeignKey($foreignKey)

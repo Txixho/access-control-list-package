@@ -13,18 +13,13 @@ trait PerfilClienteModelTrait
 
     protected $localKey = 'perfil_cliente_id';
 
-    // Métodos para cambiar los modelos
-    public function setPerfilClienteUsuarioModel($model)
-    {
-        $this->perfilClienteUsuarioModel = $model;
-    }
 
     public function setPerfilModel($model)
     {
         $this->perfilModel = $model;
     }
 
-    // Métodos para configurar las claves foráneas y la clase local
+    // Métodos para configurar las claves foráneas y la clave local
     public function setPerfilClienteForeignKey($foreignKey)
     {
         $this->perfilClienteForeignKey = $foreignKey;

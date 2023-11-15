@@ -8,7 +8,7 @@ trait PerfilClienteModelTraitConfigurable
 
     public function getObtenerPerfilesClientesUsuario()
     {
-        return $this->hasMany($this->relatedModels['perfilClienteUsuario'] ?? \App\Model\PerfilClienteUsuario::class,
+        return $this->hasMany(\App\Model\PerfilClienteUsuario::class,
             $this->foreignKeys['perfilClientePerfilClienteUsuario'] ?? 'perfil_cliente_id',
             $this->localKeys['perfilCliente'] ?? 'perfil_cliente_id');
     }

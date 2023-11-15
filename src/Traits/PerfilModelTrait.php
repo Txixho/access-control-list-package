@@ -14,16 +14,6 @@ trait PerfilModelTrait
     protected $localKeyPerfil = 'perfil_id';
 
 
-    // Métodos para cambiar los modelos
-    public function setClienteModel($model)
-    {
-        $this->clienteModel = $model;
-    }
-
-    public function setRutaModel($model)
-    {
-        $this->rutaModel = $model;
-    }
 
     // Métodos para configurar las claves foráneas y locales
     public function setForeignKeyCliente($foreignKey)
