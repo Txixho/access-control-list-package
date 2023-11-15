@@ -3,7 +3,7 @@
 namespace FbaConsulting\AccessControlListPackage\Traits;
 
 
-trait PerfilClienteTrait
+trait PerfilClienteModelTrait
 {
     protected $perfilClienteUsuarioModel = \App\Model\PerfilClienteUsuario::class;
     protected $perfilModel = \App\Model\Perfil::class;
