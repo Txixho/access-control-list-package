@@ -1,6 +1,6 @@
 # Users Access Control List (ACL) Package
 
-Este paquete proporciona una manera sencilla de añadir control de acceso basado en roles a tu aplicación Laravel.
+Este paquete proporciona una manera sencilla de añadir control de acceso basado en perfiles a tu aplicación Laravel.
 
 ## Instalación
 
@@ -28,17 +28,14 @@ composer require fbaconsulting/access-control-list-package
 ```
 Este comando descargará e instalará el paquete en tu proyecto.
 
+## Modelos necesarios para la integración de los Traits
 
-### Paso 3: Integrar Traits en los Modelos 
-En cada modelo agrega su trait:
-
-```
-use FbaConsulting\AccessControlListPackage\Traits\EjemploTrait;
-
-class Ejemplo extends Authenticatable {
-    use EjemploTrait;
-    // Resto del modelo...
-}
-```
+###### Usuario
+###### Cliente
+###### Perfil
+###### PerfilCliente
+###### PerfilClienteUsuario
+###### Ruta
+###### PerfilRuta
 
 ### Uso
