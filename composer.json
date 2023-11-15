@@ -1,5 +1,5 @@
 {
-    "name": "fbaconsulting/aclpackage2",
+    "name": "fbaconsulting/access-control-list-package",
     "description": "Paquete acl para Users",
     "type": "library",
     "license": "MIT",
