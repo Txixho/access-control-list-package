@@ -6,8 +6,8 @@ trait ClienteModelTrait
 {
     protected $perfilModel = \App\Model\Perfil::class;
     protected $pivotTable = 'perfiles_clientes';
-    protected $clienteForeignKey = 'cliente_id';
-    protected $perfilForeignKey = 'perfil_id';
+    protected $modelForeignKey = 'cliente_id';
+    protected $relatedModelForeignKey = 'perfil_id';
     protected $pivotExtraColumns = ['nombre_personalizado'];
 
     // Método para cambiar el modelo de perfil
@@ -23,14 +23,14 @@ trait ClienteModelTrait
     }
 
     // Métodos para configurar las claves foráneas
-    public function setClienteForeignKey($foreignKey)
+    public function setModelForeignKey($foreignKey)
     {
-        $this->clienteForeignKey = $foreignKey;
+        $this->modelForeignKey = $foreignKey;
     }
 
-    public function setPerfilForeignKey($foreignKey)
+    public function setRelatedModelForeignKey($foreignKey)
     {
-        $this->perfilForeignKey = $foreignKey;
+        $this->relatedModelForeignKey = $foreignKey;
     }
 
     // Método para configurar columnas adicionales en la tabla pivot
@@ -42,7 +42,7 @@ trait ClienteModelTrait
     // Método para obtener perfiles
     public function getObtenerPerfiles()
     {
-        return $this->belongsToMany($this->perfilModel, $this->pivotTable, $this->clienteForeignKey, $this->perfilForeignKey)
+        return $this->belongsToMany($this->perfilModel, $this->pivotTable, $this->modelForeignKey, $this->relatedModelForeignKey)
             ->withPivot($this->pivotExtraColumns);
     }
 }

@@ -6,7 +6,8 @@ trait UsuarioModelTrait
 {
     protected $perfilClientesUsuarioModel = \App\Model\PerfilClientesUsuario::class;
     protected $perfilClienteModel = \App\Model\PerfilCliente::class;
-    protected $usuarioForeignKey = 'usuario_id';
+    protected $foreignKey = 'usuario_id';
+    protected $localKey = 'usuario_id';
 
     // Métodos para cambiar los modelos
     public function setPerfilClientesUsuarioModel($model)
@@ -19,21 +20,27 @@ trait UsuarioModelTrait
         $this->perfilClienteModel = $model;
     }
 
-    // Método para cambiar la clave foránea
-    public function setUsuarioForeignKey($foreignKey)
+    // Métodos para configurar las claves
+    public function setForeignKey($foreignKey)
     {
-        $this->usuarioForeignKey = $foreignKey;
+        $this->foreignKey = $foreignKey;
+    }
+
+    public function setLocalKey($localKey)
+    {
+        $this->localKey = $localKey;
     }
 
     // Métodos para obtener relaciones
     public function getPerfilesClientesUsuario()
     {
-        return $this->hasMany($this->perfilClientesUsuarioModel, 'usuario_id', $this->usuarioForeignKey);
+        return $this->hasMany($this->perfilClientesUsuarioModel, $this->foreignKey, $this->localKey);
     }
 
     public function getPerfilCliente()
     {
-        return $this->hasOne($this->perfilClienteModel, 'usuario_id', $this->usuarioForeignKey);
+        return $this->hasOne($this->perfilClienteModel, $this->foreignKey, $this->localKey);
     }
 }
+
 
