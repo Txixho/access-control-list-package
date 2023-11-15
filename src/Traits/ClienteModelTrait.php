@@ -17,22 +17,6 @@ trait ClienteModelTrait
         $this->pivotTable = $tableName;
     }
 
-    // Métodos para configurar las claves foráneas
-    public function setModelForeignKey($foreignKey)
-    {
-        $this->modelForeignKey = $foreignKey;
-    }
-
-    public function setRelatedModelForeignKey($foreignKey)
-    {
-        $this->relatedModelForeignKey = $foreignKey;
-    }
-
-    // Método para configurar columnas adicionales en la tabla pivot
-    public function setPivotExtraColumns(array $columns)
-    {
-        $this->pivotExtraColumns = $columns;
-    }
 
     // Método para obtener perfiles
     public function getObtenerPerfiles()

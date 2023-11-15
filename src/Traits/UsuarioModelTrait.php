@@ -9,18 +9,7 @@ trait UsuarioModelTrait
     protected $foreignKey = 'usuario_id';
     protected $localKey = 'usuario_id';
 
-
-
-    // Métodos para configurar las claves
-    public function setForeignKey($foreignKey)
-    {
-        $this->foreignKey = $foreignKey;
-    }
-
-    public function setLocalKey($localKey)
-    {
-        $this->localKey = $localKey;
-    }
+    
 
     // Métodos para obtener relaciones
     public function getPerfilesClientesUsuario()

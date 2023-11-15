@@ -13,22 +13,6 @@ trait PerfilRutaModelTrait
 
 
 
-    // Métodos para configurar las claves foráneas y la clave local
-    public function setPerfilForeignKey($foreignKey)
-    {
-        $this->perfilForeignKey = $foreignKey;
-    }
-
-    public function setRutaForeignKey($foreignKey)
-    {
-        $this->rutaForeignKey = $foreignKey;
-    }
-
-    public function setLocalKey($localKey)
-    {
-        $this->localKey = $localKey;
-    }
-
     // Métodos para obtener relaciones
     public function getObtenerPerfil()
     {

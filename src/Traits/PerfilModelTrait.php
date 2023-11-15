@@ -15,22 +15,6 @@ trait PerfilModelTrait
 
 
 
-    // Métodos para configurar las claves foráneas y locales
-    public function setForeignKeyCliente($foreignKey)
-    {
-        $this->foreignKeyCliente = $foreignKey;
-    }
-
-    public function setForeignKeyRuta($foreignKey)
-    {
-        $this->foreignKeyRuta = $foreignKey;
-    }
-
-    public function setLocalKeyPerfil($localKey)
-    {
-        $this->localKeyPerfil = $localKey;
-    }
-
     // Métodos para configurar las tablas pivot
     public function setPivotTablePerfilCliente($tableName)
     {

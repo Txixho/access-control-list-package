@@ -12,22 +12,6 @@ trait PerfilClienteUsuarioModelTrait
     protected $localKey = 'perfil_cliente_usuario_id';
 
 
-    // Métodos para configurar las claves foráneas y la clave local
-    public function setPerfilClienteForeignKey($foreignKey)
-    {
-        $this->perfilClienteForeignKey = $foreignKey;
-    }
-
-    public function setUsuarioForeignKey($foreignKey)
-    {
-        $this->usuarioForeignKey = $foreignKey;
-    }
-
-    public function setLocalKey($localKey)
-    {
-        $this->localKey = $localKey;
-    }
-
     // Métodos para obtener relaciones
     public function getObenerPerfilCliente()
     {
