@@ -1,9 +1,9 @@
 <?php
 namespace FbaConsulting\AccessControlListPackage\Services;
 
-use FbaConsulting\AccessControlListPackage\Models\Perfil;
-use FbaConsulting\AccessControlListPackage\Models\PerfilRutas;
-use FbaConsulting\AccessControlListPackage\Models\Ruta;
+use App\Model\Perfil;
+use App\Model\PerfilRutas;
+use App\Model\Ruta;
 use Illuminate\Routing\Router;
 
 class RutaService

@@ -1,9 +1,9 @@
 <?php
 namespace FbaConsulting\AccessControlListPackage\Services;
 
-use FbaConsulting\AccessControlListPackage\Models\Perfil;
-use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
-use FbaConsulting\AccessControlListPackage\Models\PerfilClientesUsuario;
+use App\Model\Perfil;
+use App\Model\PerfilCliente;
+use App\Model\PerfilClientesUsuario;
 
 class PerfilService
 {

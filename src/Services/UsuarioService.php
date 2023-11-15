@@ -1,10 +1,9 @@
 <?php
 namespace FbaConsulting\AccessControlListPackage\Services;
 
-use FbaConsulting\AccessControlListPackage\Models\PerfilClientesUsuario;
+use App\Model\PerfilClientesUsuario;
 use App\Model\Usuario;
-use FbaConsulting\AccessControlListPackage\Models\PerfilCliente;
-use Illuminate\Support\Facades\Auth;
+use App\Model\PerfilCliente;
 
 class UsuarioService
 {
