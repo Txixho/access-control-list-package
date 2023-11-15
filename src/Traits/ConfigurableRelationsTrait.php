@@ -4,16 +4,12 @@ namespace FbaConsulting\AccessControlListPackage\Traits;
 
 trait ConfigurableRelationsTrait
 {
-    protected $relatedModels = [];
+
     protected $foreignKeys = [];
     protected $localKeys = [];
     protected $pivotTables = [];
     protected $pivotExtraColumns = [];
 
-    public function setRelatedModel($relationName, $model)
-    {
-        $this->relatedModels[$relationName] = $model;
-    }
 
     public function setForeignKey($relationName, $foreignKey)
     {
@@ -34,5 +30,5 @@ trait ConfigurableRelationsTrait
     {
         $this->pivotExtraColumns[$relationName] = $columns;
     }
-    
+
 }
