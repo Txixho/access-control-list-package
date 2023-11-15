@@ -22,8 +22,15 @@ Este trait por defecto utiliza el modelo `Perfil`, pero puedes cambiar dinámica
 $cliente = new Cliente();
 $cliente->setPerfilModel(PerfilPersonalizado:class);
 ```
-A continuación podrías usar:
+
+El trait utiliza por defecto unos valores para el nombre de la tabla, las claves foráneas y las columnas adicionales de la tabla pivot, pero estos pueden cambiar dinámicamente utilizando:
+```php
+$cliente->setPivotTable('tabla_pivot_personalizada');
+$cliente->setClienteForeignKey('id_cliente_personalizado');
+$cliente->setPerfilForeignKey('id_perfil_personalizado');
+$cliente->setPivotExtraColumns(['columna_extra1']);
+```
+Una vez ajustados los valores a tus necesidades o bien utilizando la configuración por defecto del trait podrías obtener las relaciones de la siguiente forma:
 ```php
 $perfiles = $cliente->getObtenerPerfiles()->get();
 ```
-El trait utiliza por defecto unos valores
