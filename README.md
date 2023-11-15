@@ -35,7 +35,7 @@ En cada modelo agrega su trait:
 ```
 use FbaConsulting\AccessControlListPackage\Traits\EjemploTrait;
 
-class Usuario extends Authenticatable {
+class Ejemplo extends Authenticatable {
     use EjemploTrait;
     // Resto del modelo...
 }
