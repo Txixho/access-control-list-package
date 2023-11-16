@@ -454,7 +454,7 @@ Con las herramientas presentes en el paquete podrías implementar muchas utilida
 
 - Un sistema para la administración de las rutas a las que tienen acceso los perfiles.
 
-- Un sistema para la administración de los perfiles que pueden asignar los clientes a sus usuarios.
+- Un sistema para la administración de los perfiles que cada cliente tiene disponibles para asignar.
 
 - Un sistema para que los clientes asignen perfiles a sus usuarios.
 
