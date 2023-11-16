@@ -208,6 +208,73 @@ class PerfilRuta extends Model
     // Resto del modelo...
 }
 ```
+#### Utilidad
+La implementación de estos modelos y traits permitirían crear middlewares en base a la relaciones de estos modelos. Un ejemplo sería:
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use App\Model\PerfilRutas;
+
+
+class ComprobarAccesoRuta
+{
+    
+    public function handle($request, Closure $next)
+    {
+        // Obtener el nombre de la ruta actual
+        $routeName = $request->route()->getName();
+        $user = $request->user();
+
+        if (!$user) {
+            return redirect('login');
+        }
+
+        // Obtener el perfil asociado al usuario donde habilitado sea igual a 1
+        $perfilClienteUsuario = $user->getPerfilesClientesUsuario->first(function ($perfil) {
+            return $perfil->habilitado === 1;
+        });
+
+
+        if (!$perfilClienteUsuario) {
+            abort(403, 'El usuario no tiene un perfil asociado.');
+        }
+
+        // Obtener el perfil_cliente_id desde el objeto PerfilClientesUsuario
+        $perfilClienteId = $perfilClienteUsuario->perfil_cliente_id;
+
+
+        if (!$perfilClienteId) {
+            abort(403, 'El usuario no tiene un perfil asociado.',);
+        }
+
+        // Obtener las rutas asociadas a ese perfil a través de la tabla perfiles_rutas
+        $rutasAsociadas = PerfilRuta::where('perfil_id', $perfilClienteId)
+            ->where('habilitado', 1)
+            ->get();
+
+
+        // Verificar si la ruta actual está en las rutas asociadas al perfil
+        if (!$rutasAsociadas->isEmpty()) {
+            $rutaActualExiste = $rutasAsociadas->contains(function ($perfilRuta) use ($routeName) {
+                return $perfilRuta->ruta->path === $routeName;
+            });
+
+            if (!$rutaActualExiste) {
+                abort(403, 'No tienes acceso a esta página.');
+            }
+        } else {
+            abort(403, 'No hay rutas asociadas al perfil.');
+        }
+
+        return $next($request);
+        
+    }
+
+}
+```
 
 ## Servicios
 Este paquete incluye varios servicios que facilitan la gestión de perfiles, rutas y usuarios. A continuación, se describe cada servicio y sus métodos principales:
@@ -379,3 +446,16 @@ class PerfilRutaController extends Controller
     </div>
 @endsection
 ```
+Con las herramientas presentes en el paquete podrías implementar muchas utilidades distintas. Algunos ejemplos:
+
+- Un sistema para detectar y almacenar directamente todas las rutas de la aplicación en una tabla que tenga la estructura del modelo Ruta.
+
+- Un sistema para la creación de perfiles, desde el cual se puedan asignar las rutas a las que tiene acceso.
+
+- Un sistema para la administración de las rutas a las que tienen acceso los perfiles.
+
+- Un sistema para la administración de los perfiles que pueden asignar los clientes a sus usuarios.
+
+- Un sistema para que los clientes asignen perfiles a sus usuarios.
+
+- Un sistema para que los clientes puedan personalizar el nombre de los perfiles que tienen asignados.
