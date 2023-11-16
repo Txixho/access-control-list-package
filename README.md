@@ -206,3 +206,73 @@ class PerfilRuta extends Model
     // Resto del modelo...
 }
 ```
+
+## Servicios
+Este paquete incluye varios servicios que facilitan la gestión de perfiles, rutas y usuarios. A continuación, se describe cada servicio y sus métodos principales:
+
+### PerfilService
+Este servicio ofrece funcionalidades para gestionar perfiles y sus relaciones con clientes y usuarios.
+
+Métodos Disponibles:
+
+-`obtenerPerfilesPorCliente($clienteId)`: Obtiene todos los perfiles asociados a un cliente específico. Parámetro: $clienteId - El ID del cliente.
+
+-`obtenerTodosLosPerfiles()`: Devuelve todos los perfiles disponibles.
+
+-`obtenerNombresPerfiles($perfilIds)`: Obtiene los nombres personalizados de un conjunto de perfiles. Parámetro: $perfilIds - Array de IDs de perfil.
+
+-`obtenerPerfilesUsuarios($usuariosIds)`: Retorna los perfiles asociados a una lista de usuarios. Parámetro: $usuariosIds - Array de IDs de usuario.
+
+-`obtenerPerfilHabilitadoPorUsuario($usuarios, $PerfilClienteUsuarios)`: Encuentra el perfil habilitado para un conjunto de usuarios. Parámetros:
+$usuarios - Array o colección de objetos de usuario.
+$PerfilClienteUsuarios - Colección de objetos PerfilClienteUsuario.
+
+-`deshabilitarPerfilesParaUsuario($usuarioId)`: Deshabilita todos los perfiles asociados a un usuario. Parámetro: $usuarioId - El ID del usuario.
+
+-`habilitarPerfilParaUsuario($usuarioId, $perfilId)`: Habilita un perfil específico para un usuario. Parámetros:
+$usuarioId - El ID del usuario.
+$perfilId - El ID del perfil a habilitar.
+
+-`crearPerfilConRutas($nombre, $rutasSeleccionadas)`: Crea un nuevo perfil y asocia rutas seleccionadas. Parámetros:
+$nombre - Nombre del nuevo perfil.
+$rutasSeleccionadas - Array de IDs de ruta a asociar.
+
+-`actualizarRelacionesClientePerfil($clienteId, $perfilesSeleccionados)`: Actualiza las relaciones entre clientes y perfiles. Parámetros:
+$clienteId - El ID del cliente.
+$perfilesSeleccionados - Array de IDs de perfil seleccionados.
+
+-`actualizarNombrePersonalizado($perfilClienteId, $nombrePersonalizado)`: Actualiza el nombre personalizado de un perfil cliente. Parámetros:
+$perfilClienteId - El ID del perfil cliente.
+$nombrePersonalizado - El nuevo nombre personalizado.
+
+### RutaService
+Este servicio gestiona las rutas de la aplicación.
+
+Métodos Disponibles:
+
+-`obtenerTodasLasRutas()`: Retorna todas las rutas registradas.
+
+-`obtenerRutasHabilitadasParaPerfil(Perfil $perfil)`: Devuelve las rutas habilitadas para un perfil específico. Parámetro: $perfil - Objeto del modelo Perfil.
+
+-`actualizarRutasAsociadas(Perfil $perfil, array $rutasSeleccionadas)`: Actualiza las rutas asociadas a un perfil. Parámetros:
+$perfil - Objeto del modelo Perfil.
+$rutasSeleccionadas - Array de IDs de ruta seleccionadas.
+
+-`obtenerRutasAplicacion()`: Obtiene todas las rutas de la aplicación.
+
+-`obtenerRutasTabla()`: Recupera las rutas desde la tabla de rutas.
+
+-`almacenarRutas()`: Almacena las rutas en la base de datos.
+
+### UsuarioService
+Este servicio facilita la gestión de usuarios y sus perfiles.
+
+Métodos Disponibles:
+
+-`obtenerClientePorUsuario($usuarioId)`: Encuentra el cliente asociado a un usuario. Parámetro: $usuarioId - El ID del usuario.
+
+-`obtenerUsuariosPorCliente($clienteId)`: Obtiene todos los usuarios asociados a un cliente. Parámetro: $clienteId - El ID del cliente.
+
+-`obtenerUsuarioPorId($id)`: Recupera un usuario específico por su ID. Parámetro: $id - El ID del usuario.
+
+-`obtenerPerfilPersonalizado($usuarioId)`: Obtiene el nombre personalizado del perfil de un usuario. Parámetro: $usuarioId - El ID del usuario.
