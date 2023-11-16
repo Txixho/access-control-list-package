@@ -1,6 +1,6 @@
 # Users Access Control List (ACL) Package
 
-Este paquete proporciona una manera sencilla de añadir control de acceso basado en perfiles a tu aplicación Laravel.
+Este paquete de Laravel proporciona una manera sencilla de añadir control de acceso a rutas basado en perfiles.
 
 ## Instalación
 
