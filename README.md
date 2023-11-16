@@ -29,19 +29,20 @@ composer require fbaconsulting/access-control-list-package
 Este comando descargará e instalará el paquete en tu proyecto.
 
 ## Modelos Requeridos y Estructura de Base de Datos
-Para integrar correctamente el paquete AccessControlList en tu proyecto Laravel, es necesario que tu aplicación incluya los siguientes modelos, los cuales deben estar asociados con estructuras específicas de base de datos. A continuación se detallan los modelos y su estructura mínima:
+Para integrar correctamente este paquete en tu proyecto Laravel, es necesario que tu aplicación incluya los siguientes modelos, los cuales deben estar asociados con estructuras específicas de base de datos. A continuación se detallan los modelos y su estructura mínima:
 
 ### Modelo Cliente
-Representa a los clientes en tu aplicación. La asociación de los distintos perfiles se hace contra este modelo.
+Representa a los clientes en tu aplicación. La asociación de los distintos perfiles se hace con este modelo.
 
 ```php
 class Cliente extends Model
 {
     protected $table = 'clientes';
     protected $primaryKey = 'cliente_id';
+    protected $fillable = ['nombre'];
 }
-
 ```
+
 ### Modelo Perfil
 El modelo Perfil representa los perfiles de usuarios dentro de la aplicación.
 
@@ -62,6 +63,7 @@ class Usuario extends User
     use Notifiable;
     protected $table = "usuarios";
     protected $primaryKey = 'usuario_id';
+    protected $fillable = ['cliente_id', 'login', 'email', 'nombre', 'apellidos'];
 }
 ```
 ### Modelo Ruta
