@@ -89,22 +89,22 @@ class PerfilCliente extends Model
 }
 ```
 
-### Modelo PerfilClientesUsuario
+### Modelo PerfilClienteUsuario
 Relaciona los perfiles de clientes con usuarios específicos.
 
 ```php
-class PerfilClientesUsuario extends Model
+class PerfilClienteUsuario extends Model
 {
     protected $table = 'perfiles_clientes_usuarios';
     protected $primaryKey = 'perfil_cliente_usuario_id';
     protected $fillable = ['usuario_id', 'perfil_cliente_id'];
 }
 ```
-### Modelo PerfilRutas
+### Modelo PerfilRuta
 Gestiona la relación entre perfiles y rutas accesibles.
 
 ```php
-class PerfilRutas extends Model
+class PerfilRuta extends Model
 {
     protected $table = 'perfiles_rutas';
     protected $primaryKey = 'perfil_ruta_id';
@@ -112,5 +112,97 @@ class PerfilRutas extends Model
     protected $fillable = ['perfil_id', 'ruta_id', 'habilitado'];
 }
 ```
+## Traits
+Este paquete proporciona una serie de traits que facilitan la gestión de relaciones entre los diferentes modelos. A continuación se detalla cada uno de estos traits y cómo pueden ser integrados en tus modelos.
 
-### Uso
+### ClienteModelTrait
+Este trait se utiliza para gestionar las relaciones entre el modelo Cliente y otros modelos relacionados con los perfiles.
+
+-Método `getObtenerPerfiles()`: Devuelve una colección de perfiles asociados con el cliente. Utiliza la relación belongsToMany para conectar con el modelo Perfil.
+
+-Configuración de Tabla Pivot: Puedes configurar el nombre de la tabla pivot que conecta clientes con perfiles usando el método `setPivotTable()`.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\ClienteModelTrait;
+
+class Cliente extends Model
+{
+    use ClienteModelTrait;
+
+    // Resto del modelo...
+}
+```
+### PerfilModelTrait
+Este trait se enfoca en las relaciones del modelo Perfil.
+
+-Métodos `getObtenerClientes()` y `getObtenerRutas()`: Permiten acceder a los clientes y rutas relacionadas con un perfil.
+
+-Configuración de Tabla Pivot: Puedes configurar los nombres de las tablas pivot que conectan con perfiles usando los métodos `setPivotTablePerfilCliente()` y `setPivotTablePerfilRuta()`.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\PerfilModelTrait;
+
+class Perfil extends Model
+{
+    use PerfilModelTrait;
+
+    // Resto del modelo...
+}
+```
+### UsuarioModelTrait
+Este trait está diseñado para ser utilizado con el modelo Usuario y facilita la gestión de sus relaciones con los modelos PerfilClienteUsuario y PerfilCliente.
+
+-Método `getPerfilesClientesUsuario()`: Devuelve todas las instancias de PerfilClienteUsuario asociadas con un usuario particular. Utiliza la relación hasMany para conectar el usuario con múltiples perfiles de clientes.
+
+-Método `getPerfilCliente()`: Proporciona acceso a la instancia única de PerfilCliente asociada con el usuario. Utiliza la relación hasOne.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\UsuarioModelTrait;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class Usuario extends Authenticatable
+{
+    use UsuarioModelTrait;
+
+    // Resto del modelo...
+}
+```
+### PerfilClienteModelTrait
+Este trait se usa para definir las relaciones del modelo PerfilCliente.
+
+Métodos de Relación: Incluye `getObtenerPerfilesClientesUsuario()` para obtener los usuarios asociados con un perfil de cliente y `getObtenerPerfil()` para obtener el perfil relacionado.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\PerfilClienteModelTrait;
+
+class PerfilCliente extends Model
+{
+    use PerfilClienteModelTrait;
+
+    // Resto del modelo...
+}
+```
+### PerfilClienteUsuarioModelTrait
+Facilita la gestión de las relaciones entre los modelos PerfilCliente y Usuario.
+
+Métodos `getObenerPerfilCliente()` y `getObtenerUsuario()`: Proporcionan accesos a la instancia de Cliente y Usuario relacionados, respectivamente.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\PerfilClienteUsuarioModelTrait;
+
+class PerfilClienteUsuario extends Model
+{
+    use PerfilClienteUsuarioModelTrait;
+
+    // Resto del modelo...
+}
+```
+### PerfilRutaModelTrait
+Se utiliza para las relaciones del modelo PerfilRuta.
+
+Métodos `getObtenerPerfil()` y `getObtenerRuta()`: Ofrecen una forma de acceder al perfil y a la ruta asociada en el modelo PerfilRuta.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\PerfilRutaModelTrait;
+
+class PerfilRuta extends Model
+{
+    use PerfilRutaModelTrait;
+
+    // Resto del modelo...
+}
+```
