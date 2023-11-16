@@ -8,7 +8,7 @@ trait UsuarioModelTraitConfigurable
 
     public function getPerfilesClientesUsuario()
     {
-        return $this->hasMany(\App\Model\PerfilClientesUsuario::class,
+        return $this->hasMany(\App\Model\PerfilClienteUsuario::class,
             $this->foreignKeys['usuarioPerfilClienteUsuario'] ?? 'usuario_id',
             $this->localKeys['usuario'] ?? 'usuario_id');
     }

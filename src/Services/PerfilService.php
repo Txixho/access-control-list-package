@@ -3,7 +3,7 @@ namespace FbaConsulting\AccessControlListPackage\Services;
 
 use App\Model\Perfil;
 use App\Model\PerfilCliente;
-use App\Model\PerfilClientesUsuario;
+use App\Model\PerfilClienteUsuario;
 
 class PerfilService
 {
@@ -28,17 +28,17 @@ class PerfilService
 
     public function obtenerPerfilesUsuarios($usuariosIds)
     {
-        return PerfilClientesUsuario::whereIn('usuario_id', $usuariosIds)
+        return PerfilClienteUsuario::whereIn('usuario_id', $usuariosIds)
             ->where('habilitado', true)
             ->get();
     }
 
-    public function obtenerPerfilHabilitadoPorUsuario($usuarios, $perfilClientesUsuarios)
+    public function obtenerPerfilHabilitadoPorUsuario($usuarios, $PerfilClienteUsuarios)
     {
         $perfilesHabilitadosPorUsuario = [];
 
         foreach ($usuarios as $usuarioItem) {
-            $perfilHabilitado = $perfilClientesUsuarios
+            $perfilHabilitado = $PerfilClienteUsuarios
                 ->where('usuario_id', $usuarioItem->usuario_id)
                 ->where('habilitado', true)
                 ->first();
@@ -54,14 +54,14 @@ class PerfilService
     }
     public function deshabilitarPerfilesParaUsuario($usuarioId)
     {
-        return PerfilClientesUsuario::where('usuario_id', $usuarioId)->update(['habilitado' => false]);
+        return PerfilClienteUsuario::where('usuario_id', $usuarioId)->update(['habilitado' => false]);
     }
 
     public function habilitarPerfilParaUsuario($usuarioId, $perfilId)
     {
-        PerfilClientesUsuario::where('usuario_id', $usuarioId)->update(['habilitado' => false]);
+        PerfilClienteUsuario::where('usuario_id', $usuarioId)->update(['habilitado' => false]);
 
-        return PerfilClientesUsuario::updateOrInsert(
+        return PerfilClienteUsuario::updateOrInsert(
             ['usuario_id' => $usuarioId, 'perfil_cliente_id' => $perfilId],
             ['habilitado' => true]
         );
@@ -103,7 +103,7 @@ class PerfilService
                 ->get();
 
             foreach ($relacionesDeshabilitadas as $relacion) {
-                PerfilClientesUsuario::where('perfil_cliente_id', $relacion->perfil_cliente_id)
+                PerfilClienteUsuario::where('perfil_cliente_id', $relacion->perfil_cliente_id)
                     ->update(['habilitado' => false]);
             }
 

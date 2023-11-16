@@ -1,7 +1,7 @@
 <?php
 namespace FbaConsulting\AccessControlListPackage\Services;
 
-use App\Model\PerfilClientesUsuario;
+use App\Model\PerfilClienteUsuario;
 use App\Model\Usuario;
 use App\Model\PerfilCliente;
 
@@ -26,7 +26,7 @@ class UsuarioService
     public function obtenerPerfilPersonalizado($usuarioId)
     {
         // Buscar la relación del usuario con su perfil-cliente habilitado.
-        $perfilClienteUsuario = PerfilClientesUsuario::where('usuario_id', $usuarioId)
+        $perfilClienteUsuario = PerfilClienteUsuario::where('usuario_id', $usuarioId)
             ->where('habilitado', true)
             ->first();
 

@@ -2,7 +2,7 @@
 namespace FbaConsulting\AccessControlListPackage\Services;
 
 use App\Model\Perfil;
-use App\Model\PerfilRutas;
+use App\Model\PerfilRuta;
 use App\Model\Ruta;
 use Illuminate\Routing\Router;
 
@@ -22,7 +22,7 @@ class RutaService
 
     public function obtenerRutasHabilitadasParaPerfil(Perfil $perfil)
     {
-        return PerfilRutas::where('perfil_id', $perfil->perfil_id)
+        return PerfilRuta::where('perfil_id', $perfil->perfil_id)
             ->where('habilitado', true)
             ->pluck('ruta_id')
             ->all();
