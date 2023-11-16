@@ -278,3 +278,104 @@ Métodos Disponibles:
 -`obtenerUsuarioPorId($id)`: Recupera un usuario específico por su ID. Parámetro: $id - El ID del usuario.
 
 -`obtenerPerfilPersonalizado($usuarioId)`: Obtiene el nombre personalizado del perfil de un usuario. Parámetro: $usuarioId - El ID del usuario.
+
+#### Uso de los servicios
+Estos servicios pueden ser utilizados en los controladores de tu aplicación para realizar diversas operaciones relacionadas con perfiles, rutas y usuarios. Por ejemplo, podrías crear un controlador que tenga métodos para mostrar todas las rutas asociadas a un perfil en una vista y poder actualizarlas desde la propia vista:
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Model\Perfil;
+use FbaConsulting\AccessControlListPackage\Services\RutaService;
+use Illuminate\Http\Request;
+
+class PerfilRutaController extends Controller
+{
+
+    public function __construct(RutaService $rutaService)
+    {
+        $this->rutaService = $rutaService;
+    }
+
+    public function index(Perfil $perfil)
+    {
+        $perfilRutas = $this->rutaService->obtenerRutasHabilitadasParaPerfil($perfil);
+        $rutas = $this->rutaService->obtenerTodasLasRutas();
+
+        return view('ejemplo.vista', compact('perfil', 'rutas', 'perfilRutas'));
+    }
+
+    public function update(Request $request, Perfil $perfil)
+    {
+        try {
+            $this->rutaService->actualizarRutasAsociadas($perfil, $request->input('rutas', []));
+            return redirect()->back()->with('success', 'Rutas actualizadas con éxito.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ha ocurrido un error al actualizar las rutas: ' . $e->getMessage());
+        }
+    }
+    
+}
+```
+```php
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h1>Administración de Rutas para el Perfil: {{ $perfil->nombre }}</h1>
+        <div style="position: absolute; top: 5px; right: 10px;">
+            <a href="{{ route('tu-ruta-al-dashboard') }}">Volver a Dashboard</a>
+        </div>
+        <div style="position: absolute; top: 30px; right: 10px;">
+            <a href="{{ route('tu-ruta-a-la-seleccion-de-perfil') }}">Atrás</a>
+        </div>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <!-- Formulario para actualizar las rutas asociadas al perfil -->
+        <form method="post" action="{{ route('tu-ruta-al-metodo-update', $perfil->perfil_id) }}">
+            @csrf
+            @method('PUT')
+
+            <!-- Lista de todas las rutas -->
+            <ul class="list-group">
+                @foreach($rutas as $ruta)
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!-- Columna para mostrar la ruta -->
+                            <div class="col-md-6">
+                                {{ $ruta->path }}
+                            </div>
+
+                            <!-- Columna para el checkbox -->
+                            <div class="col-md-6">
+                                <div class="form-check float-right">
+                                    <input
+                                        type="checkbox"
+                                        class="form-check-input"
+                                        name="rutas[]"
+                                        value="{{ $ruta->ruta_id }}"
+                                        {{ in_array($ruta->ruta_id, $perfilRutas) ? 'checked' : '' }}
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+
+            <button type="submit" class="btn btn-primary mt-4">Actualizar Rutas</button>
+        </form>
+    </div>
+@endsection
+```
