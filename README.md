@@ -29,7 +29,7 @@ composer require fbaconsulting/access-control-list-package
 Este comando descargará e instalará el paquete en tu proyecto.
 
 ## Modelos Requeridos y Estructura de Base de Datos
-Para integrar correctamente este paquete en tu proyecto Laravel, es necesario que tu aplicación incluya los siguientes modelos, los cuales deben estar asociados con estructuras específicas de base de datos. A continuación se detallan los modelos y su estructura mínima:
+Para integrar correctamente este paquete en tu proyecto Laravel, es necesario que tu aplicación incluya los siguientes modelos, los cuales deben estar asociados con estructuras específicas mínimas de base de datos. A continuación se detallan los modelos y su estructura mínima:
 
 ### Modelo Cliente
 Representa a los clientes en tu aplicación. La asociación de los distintos perfiles se hace con este modelo.
@@ -122,7 +122,6 @@ Este trait se utiliza para gestionar las relaciones entre el modelo Cliente y ot
 
 -Método `getObtenerPerfiles()`: Devuelve una colección de perfiles asociados con el cliente. Utiliza la relación belongsToMany para conectar con el modelo Perfil.
 
--Configuración de Tabla Pivot: Puedes configurar el nombre de la tabla pivot que conecta clientes con perfiles usando el método `setPivotTable()`.
 ```php
 use FbaConsulting\AccessControlListPackage\Traits\ClienteModelTrait;
 
@@ -136,9 +135,8 @@ class Cliente extends Model
 ### PerfilModelTrait
 Este trait se enfoca en las relaciones del modelo Perfil.
 
--Métodos `getObtenerClientes()` y `getObtenerRutas()`: Permiten acceder a los clientes y rutas relacionadas con un perfil.
+-Métodos `getObtenerClientesPerfil()` y `getObtenerRutasPerfil()`: Permiten acceder a los clientes y rutas relacionadas con un perfil.
 
--Configuración de Tabla Pivot: Puedes configurar los nombres de las tablas pivot que conectan con perfiles usando los métodos `setPivotTablePerfilCliente()` y `setPivotTablePerfilRuta()`.
 ```php
 use FbaConsulting\AccessControlListPackage\Traits\PerfilModelTrait;
 
@@ -171,14 +169,12 @@ Este trait se utiliza para gestionar las relaciones del modelo Ruta
 
 -Método `getPerfilesRutas()`: Este método retorna una relación de muchos a muchos con el modelo Perfil. Permite acceder a todos los perfiles asociados con una ruta específica.
 
--Configuración de Tabla Pivot: Puedes configurar el nombre de la tabla pivot que conecta rutas con perfiles usando el método `setPivotTable()`.
 ```php
 use FbaConsulting\AccessControlListPackage\Traits\RutaModelTrait;
 
 class Ruta extends Model
 {
     use RutaModelTrait;
-
 
     // Resto del modelo...
 }
