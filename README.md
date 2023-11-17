@@ -166,6 +166,24 @@ class Usuario extends Authenticatable
     // Resto del modelo...
 }
 ```
+### RutaModelTrait
+Este trait se utiliza para gestionar las relaciones del modelo Ruta
+
+-Método `getPerfilesRutas()`: Este método retorna una relación de muchos a muchos con el modelo Perfil. Permite acceder a todos los perfiles asociados con una ruta específica.
+
+-Configuración de Tabla Pivot: Puedes configurar el nombre de la tabla pivot que conecta rutas con perfiles usando el método `setPivotTable()`.
+```php
+use FbaConsulting\AccessControlListPackage\Traits\RutaModelTrait;
+
+class Ruta extends Model
+{
+    use RutaModelTrait;
+
+
+    // Resto del modelo...
+}
+```
+
 ### PerfilClienteModelTrait
 Este trait se usa para definir las relaciones del modelo PerfilCliente.
 
