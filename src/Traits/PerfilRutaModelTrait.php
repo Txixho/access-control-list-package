@@ -2,25 +2,20 @@
 
 namespace FbaConsulting\AccessControlListPackage\Traits;
 
+use App\Model\Perfil;
+use App\Model\Ruta;
 
 trait PerfilRutaModelTrait
 {
-    protected $perfilModel = \App\Model\Perfil::class;
-    protected $rutaModel = \App\Model\Ruta::class;
-    protected $perfilForeignKey = 'perfil_id';
-    protected $rutaForeignKey = 'ruta_id';
-    protected $localKey = 'perfil_ruta_id';
-
-
 
     // Métodos para obtener relaciones
     public function getObtenerPerfil()
     {
-        return $this->belongsTo($this->perfilModel, $this->perfilForeignKey, $this->localKey);
+        return $this->belongsTo(Perfil::class, 'perfil_id', 'perfil_ruta_id');
     }
 
     public function getObtenerRuta()
     {
-        return $this->belongsTo($this->rutaModel, $this->rutaForeignKey, $this->localKey);
+        return $this->belongsTo(Ruta::class, 'ruta_id', 'perfil_ruta_id');
     }
 }

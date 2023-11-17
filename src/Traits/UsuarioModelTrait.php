@@ -2,24 +2,21 @@
 
 namespace FbaConsulting\AccessControlListPackage\Traits;
 
+use App\Model\PerfilClienteUsuario;
+use App\Model\PerfilCliente;
+
 trait UsuarioModelTrait
 {
-    protected $perfilClienteUsuarioModel = \App\Model\PerfilClienteUsuario::class;
-    protected $perfilClienteModel = \App\Model\PerfilCliente::class;
-    protected $foreignKey = 'usuario_id';
-    protected $localKey = 'usuario_id';
-
-    
 
     // Métodos para obtener relaciones
     public function getPerfilesClientesUsuario()
     {
-        return $this->hasMany($this->perfilClienteUsuarioModel, $this->foreignKey, $this->localKey);
+        return $this->hasMany(PerfilClienteUsuario::class, 'usuario_id', 'usuario_id');
     }
 
     public function getPerfilCliente()
     {
-        return $this->hasOne($this->perfilClienteModel, $this->foreignKey, $this->localKey);
+        return $this->hasOne(PerfilCliente::class, 'usuario_id', 'usuario_id');
     }
 }
 
